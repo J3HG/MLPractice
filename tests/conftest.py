@@ -23,7 +23,7 @@ def setUpDriver(request):
         options = FirefoxOptions()
         options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
 
-        service_obj = FirefoxService(r"C:\Users\mari_\Downloads\geckodriver-v0.36.0-win32\geckodriver.exe")
+        service_obj = FirefoxService(r"C:\Users\mari_\Downloads\geckodriver-v0.36.0-win-aarch64\geckodriver.exe")
         driver = webdriver.Firefox(service=service_obj, options=FirefoxOptions())
     else:
         print("Unknown browser")
@@ -34,4 +34,4 @@ def setUpDriver(request):
 
     request.cls.driver = driver
     yield driver
-    #driver.quit()
+    driver.quit()
